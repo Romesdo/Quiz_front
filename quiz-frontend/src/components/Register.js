@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/register.css';
+import '../styles/global.css';
 
 function Register() {
     const [name, setName] = useState('');
@@ -24,24 +26,24 @@ function Register() {
                     'Content-Type': 'application/json'
                 }
             });
-            
-            console.log(response.data); // Ghi log phản hồi để gỡ lỗi
+
+            console.log(response.data);
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
             navigate('/');
         } catch (err) {
-            console.error(err.response); // Ghi log toàn bộ phản hồi lỗi
+            console.error(err.response);
             setError(err.response?.data?.message || 'Đăng ký thất bại. Vui lòng thử lại.');
         }
     };
 
     return (
         <div className="Register">
-            <h1>Register</h1>
+            <h1>Đăng ký tài khoản</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleRegister}>
                 <div>
-                    <label>Name: </label>
+                    <label>Họ và tên:</label>
                     <input
                         type="text"
                         value={name}
@@ -50,7 +52,7 @@ function Register() {
                     />
                 </div>
                 <div>
-                    <label>Email: </label>
+                    <label>Email:</label>
                     <input
                         type="email"
                         value={email}
@@ -59,7 +61,7 @@ function Register() {
                     />
                 </div>
                 <div>
-                    <label>Password: </label>
+                    <label>Mật khẩu:</label>
                     <input
                         type="password"
                         value={password}
@@ -68,7 +70,7 @@ function Register() {
                     />
                 </div>
                 <div>
-                    <label>Confirm Password: </label>
+                    <label>Xác nhận mật khẩu:</label>
                     <input
                         type="password"
                         value={passwordConfirmation}
@@ -76,10 +78,10 @@ function Register() {
                         required
                     />
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit">Đăng ký</button>
             </form>
             <p>
-                Already have an account? <a href="/login">Login here</a>
+                Bạn đã có tài khoản? <a href="/login">Đăng nhập tại đây</a>
             </p>
         </div>
     );

@@ -1,0 +1,105 @@
+/* styles/question.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Questions */
+.question {
+  padding: 15px; /* Giảm từ 20px xuống 15px */
+  border: 1px solid #e0e6e9; /* Đồng bộ border với các trang khác */
+  border-radius: 8px;
+  margin-bottom: 15px; /* Giảm từ 20px xuống 15px */
+  background: #fafafa;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif; /* Sử dụng font Poppins */
+}
+
+.question:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Tăng box-shadow */
+  transform: translateY(-2px); /* Hiệu ứng hover nhẹ */
+}
+
+.question h3 {
+  color: #2c3e50; /* Đồng bộ màu với các trang khác */
+  font-size: 18px;
+  margin-bottom: 12px; /* Giảm từ 15px xuống 12px */
+}
+
+.question ul {
+  list-style: none;
+  padding: 0;
+}
+
+.question li {
+  margin-bottom: 8px; /* Giảm từ 10px xuống 8px */
+}
+
+.question label {
+  display: flex;
+  align-items: center;
+  color: #555;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 15px; /* Đồng bộ kích thước chữ */
+}
+
+.question label:hover {
+  background-color: #f0f0f0;
+}
+
+.question input[type='radio'] {
+  margin-right: 8px; /* Giảm từ 10px xuống 8px */
+}
+
+.correct {
+  color: #28a745;
+  font-weight: 500;
+  margin-left: 8px; /* Giảm từ 10px xuống 8px */
+}
+
+.incorrect {
+  color: #dc3545;
+  font-weight: 500;
+  margin-left: 8px; /* Giảm từ 10px xuống 8px */
+}
+
+/* Responsive design for questions */
+@media (max-width: 768px) {
+  .question {
+    padding: 12px;
+  }
+
+  .question h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .question li {
+    font-size: 14px;
+  }
+
+  .question label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .question {
+    padding: 10px;
+  }
+
+  .question h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .question li {
+    font-size: 13px;
+  }
+
+  .question label {
+    font-size: 13px;
+  }
+}

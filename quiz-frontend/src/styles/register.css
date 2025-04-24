@@ -1,0 +1,178 @@
+/* styles/register.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Register container */
+.Register {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Register:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Register title */
+.Register h1 {
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Register form */
+.Register form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.Register form div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels */
+.Register label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.Register input {
+  padding: 10px 12px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f9fbfc;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.Register input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Button */
+.Register button {
+  padding: 10px 18px; /* Đồng bộ padding */
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Đồng bộ gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+.Register button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d82);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.Register button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+
+/* Paragraph and link */
+.Register p {
+  margin-top: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.Register a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Register a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive design for Register */
+@media (max-width: 768px) {
+  .Register {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .Register h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .Register label {
+    font-size: 14px;
+  }
+
+  .Register input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .Register button {
+    padding: 8px 15px; /* Giảm padding */
+    font-size: 15px;
+  }
+
+  .Register p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Register {
+    padding: 15px;
+  }
+
+  .Register h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .Register label {
+    font-size: 13px;
+  }
+
+  .Register input {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .Register button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .Register p {
+    font-size: 12px;
+  }
+}

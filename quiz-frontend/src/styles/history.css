@@ -1,0 +1,202 @@
+/* styles/history.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* History container */
+.History {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.History:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.History h1 {
+  color: #2c3e50;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* History table */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-table th,
+.history-table td {
+  padding: 15px 20px;
+  border: 1px solid #e0e6e9;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.history-table th {
+  background: linear-gradient(90deg, #f5f5f5, #eceff1);
+  color: #34495e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.history-table td {
+  color: #555;
+  background-color: #fff;
+}
+
+.history-table tr:hover td {
+  background-color: #f0f4f7;
+}
+
+.history-table button {
+  padding: 10px 18px; /* Đồng bộ padding với quiz-button */
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Đồng bộ gradient */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Đồng bộ border-radius */
+  cursor: pointer;
+  font-size: 16px; /* Đồng bộ font-size */
+  font-weight: 500;
+  transition: all 0.3s ease; /* Đồng bộ transition */
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2); /* Đồng bộ box-shadow */
+}
+
+.history-table button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d82); /* Đồng bộ gradient hover */
+  transform: translateY(-3px); /* Đồng bộ hiệu ứng hover */
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.history-table button:active {
+  transform: translateY(0); /* Đồng bộ hiệu ứng active */
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+/* No history message */
+.no-history {
+  color: #7f8c8d;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9fbfc;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for no-history message */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design for History */
+@media (max-width: 1024px) {
+  .History {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .History h1 {
+    font-size: 28px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .history-table button {
+    padding: 8px 12px; /* Giảm padding cho màn hình nhỏ */
+    font-size: 15px; /* Giảm font-size */
+  }
+}
+
+@media (max-width: 768px) {
+  .History {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .History h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .history-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .history-table button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .no-history {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .History {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .History h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .history-table button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .no-history {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

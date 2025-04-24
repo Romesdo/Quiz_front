@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/login.css';
+import '../styles/global.css';
 
 function Login({ setUser }) {
     const [email, setEmail] = useState('');
@@ -18,18 +20,16 @@ function Login({ setUser }) {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
 
-            // Cập nhật trạng thái người dùng trong App.js
             setUser(response.data.user);
-
-            navigate('/');  // Chuyển về trang chính
+            navigate('/');
         } catch (err) {
-            setError(err.response?.data?.message || 'Login failed');
+            setError(err.response?.data?.message || 'Đăng nhập thất bại');
         }
     };
 
     return (
         <div className="Login">
-            <h1>Login</h1>
+            <h1>Đăng nhập</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleLogin}>
                 <div>
@@ -42,7 +42,7 @@ function Login({ setUser }) {
                     />
                 </div>
                 <div>
-                    <label>Password: </label>
+                    <label>Mật khẩu: </label>
                     <input
                         type="password"
                         value={password}
@@ -50,10 +50,10 @@ function Login({ setUser }) {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">Đăng nhập</button>
             </form>
             <p>
-                Don't have an account? <a href="/register">Register here</a>
+                Chưa có tài khoản? <a href="/register">Đăng ký tại đây</a>
             </p>
         </div>
     );

@@ -1,0 +1,354 @@
+/* styles/quiz.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Quiz */
+.Quiz {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Quiz:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Quiz h1 {
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Quiz p {
+  color: #7f8c8d;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+/* Timer */
+.timer {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.timer span {
+  margin-right: 5px;
+}
+
+.timer-warning {
+  color: #dc3545;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Question navigation */
+.question-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 8px;
+  background: linear-gradient(90deg, #f5f5f5, #eceff1);
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.question-nav-item {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #dfe6e9;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.question-nav-item.answered {
+  background: linear-gradient(90deg, #28a745, #218838);
+  color: white;
+  border-color: #28a745;
+}
+
+.question-nav-item:hover {
+  background-color: #e9ecef;
+  transform: scale(1.1);
+}
+
+.question-nav-item.answered:hover {
+  background: linear-gradient(90deg, #218838, #1a7431);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.legend-item::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.legend-item.answered::before {
+  background-color: #28a745;
+}
+
+.legend-item.not-answered::before {
+  background-color: #ffc107;
+}
+
+/* Questions container */
+.questions-container {
+  margin-top: 15px;
+}
+
+.no-questions {
+  color: #c0392b;
+  font-size: 16px;
+  text-align: center;
+  margin: 15px 0;
+  padding: 12px;
+  background-color: #f9e1e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.explanation {
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Check answer button */
+.check-answer-button {
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+.check-answer-button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d82);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.check-answer-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Finish and restart buttons */
+.finish-button,
+.restart-button {
+  display: block;
+  width: 200px;
+  margin: 15px auto;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #28a745, #218838);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
+}
+
+.finish-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.finish-button:hover:not(:disabled),
+.restart-button:hover {
+  background: linear-gradient(90deg, #218838, #1a7431);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.finish-button:active:not(:disabled),
+.restart-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
+}
+
+/* Review button */
+.review-button {
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+  display: inline-block;
+  margin: 0 10px; /* Khoảng cách giữa các nút trong phần result */
+}
+
+.review-button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d82);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.review-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Animation for no-questions message */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design for Quiz */
+@media (max-width: 1024px) {
+  .Quiz {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .Quiz h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Quiz {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .Quiz h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .question-nav-item {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .check-answer-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .finish-button,
+  .restart-button,
+  .review-button {
+    width: 100%;
+    max-width: 180px;
+    padding: 8px 15px;
+    font-size: 15px;
+  }
+
+  .timer {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Quiz {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .Quiz h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .question-nav {
+    gap: 5px;
+  }
+
+  .question-nav-item {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .check-answer-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .finish-button,
+  .restart-button,
+  .review-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .timer {
+    font-size: 14px;
+  }
+}

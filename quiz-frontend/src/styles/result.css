@@ -1,0 +1,203 @@
+/* styles/result.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Result */
+.result {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff; /* Màu nền trắng sạch */
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08); /* Bóng nhẹ, hiện đại */
+  font-family: 'Poppins', sans-serif;
+}
+
+.result h2 {
+  color: #1a2b49; /* Màu xanh đậm nhẹ nhàng */
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Result button */
+.result-button {
+  padding: 10px 20px;
+  background: #1a73e8; /* Màu xanh Google, hiện đại */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.2); /* Bóng nhẹ */
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  width: auto;
+}
+
+/* Hiệu ứng khi hover */
+.result-button:hover {
+  background: #1557b0; /* Màu xanh đậm hơn khi hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+}
+
+/* Hiệu ứng khi click */
+.result-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(26, 115, 232, 0.2);
+}
+
+/* Thêm hiệu ứng focus */
+.result-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.3);
+}
+
+/* Result details */
+.result-details {
+  margin-top: 25px;
+  padding: 25px;
+  background: #f9fafb; /* Màu nền xám trắng rất nhạt */
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08); /* Bóng nhẹ */
+  text-align: center; /* Căn giữa nội dung */
+  max-width: 850px; /* Tăng chiều rộng lên 850px để thoáng hơn nữa */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-details h2 {
+  color: #1a2b49;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Container for difficulty and score */
+.result-stats {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 30px; /* Tăng khoảng cách giữa hai phần tử */
+  margin-bottom: 20px; /* Khoảng cách với nút Đóng */
+  width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng */
+}
+
+/* Highlight difficulty */
+.difficulty-highlight {
+  flex: 1; /* Chiếm không gian bằng nhau */
+  font-size: 18px; /* Font vừa phải */
+  font-weight: 500;
+  color: #34495e; /* Màu chữ xám đậm nhẹ */
+  background: #e6f0fa; /* Màu xanh nhạt rất nhẹ */
+  padding: 10px 25px; /* Tăng padding ngang để rộng hơn nữa */
+  border-radius: 6px;
+  border: 1px solid #d1e3fa; /* Viền nhẹ để tạo độ sâu */
+  transition: all 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+  min-width: 250px; /* Tăng chiều rộng tối thiểu lên 250px */
+}
+
+/* Hiệu ứng khi hover */
+.difficulty-highlight:hover {
+  background: #d1e3fa; /* Màu sáng hơn khi hover */
+  transform: translateY(-1px);
+}
+
+/* Highlight score */
+.score-highlight {
+  flex: 1; /* Chiếm không gian bằng nhau */
+  font-size: 18px; /* Font bằng với độ khó */
+  font-weight: 500; /* Điểm số không cần đậm hơn */
+  color: #34495e;
+  background: #e6f7e9; /* Màu xanh lá nhạt rất nhẹ */
+  padding: 10px 25px; /* Tăng padding ngang để rộng hơn nữa */
+  border-radius: 6px;
+  border: 1px solid #c3e6cb; /* Viền nhẹ */
+  transition: all 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+  min-width: 250px; /* Tăng chiều rộng tối thiểu lên 250px */
+}
+
+/* Hiệu ứng khi hover */
+.score-highlight:hover {
+  background: #c3e6cb;
+  transform: translateY(-1px);
+}
+
+/* Responsive design for Result */
+@media (max-width: 768px) {
+  .result {
+    padding: 15px;
+  }
+
+  .result h2 {
+    font-size: 24px;
+  }
+
+  .result-button {
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+
+  .result-details {
+    padding: 20px;
+    max-width: 700px; /* Giảm chiều rộng một chút trên màn hình nhỏ */
+  }
+
+  .result-details h2 {
+    font-size: 22px;
+  }
+
+  .result-stats {
+    gap: 20px; /* Giảm khoảng cách */
+  }
+
+  .difficulty-highlight,
+  .score-highlight {
+    font-size: 16px;
+    padding: 8px 20px;
+    min-width: 200px; /* Giảm chiều rộng tối thiểu */
+  }
+}
+
+@media (max-width: 480px) {
+  .result {
+    padding: 12px;
+  }
+
+  .result h2 {
+    font-size: 22px;
+  }
+
+  .result-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .result-details {
+    padding: 15px;
+    max-width: 100%; /* Chiếm toàn bộ chiều rộng trên màn hình rất nhỏ */
+  }
+
+  .result-details h2 {
+    font-size: 20px;
+  }
+
+  .result-stats {
+    flex-direction: column; /* Xếp chồng trên màn hình nhỏ */
+    gap: 10px;
+  }
+
+  .difficulty-highlight,
+  .score-highlight {
+    font-size: 15px;
+    padding: 8px 15px;
+    min-width: 100%; /* Chiếm toàn bộ chiều rộng khi xếp chồng */
+  }
+}

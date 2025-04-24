@@ -6,7 +6,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import History from './components/History';
 import axios from 'axios';
-import './App.css';
+import './styles/global.css';
+import './styles/navigation.css';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -15,7 +16,6 @@ function App() {
         const storedUser = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
-        // Nếu có user và token → kiểm tra token có hợp lệ không
         if (storedUser && token) {
             axios.get('http://localhost:8000/api/user', {
                 headers: {
@@ -23,10 +23,9 @@ function App() {
                 }
             })
             .then(response => {
-                setUser(JSON.parse(storedUser)); // Token hợp lệ → set user
+                setUser(JSON.parse(storedUser));
             })
             .catch(error => {
-                // Token không hợp lệ → xóa thông tin
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
                 setUser(null);
@@ -45,7 +44,7 @@ function App() {
             localStorage.removeItem('user');
             setUser(null);
         } catch (err) {
-            console.error('Logout failed:', err);
+            console.error('Đăng xuất thất bại:', err);
         }
     };
 
@@ -53,20 +52,20 @@ function App() {
         <Router>
             <div className="App">
                 <nav>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Trang chủ</Link>
                     {user ? (
                         <>
-                            <span className="welcome-message"> | Welcome, {user.name} | </span>
-                            <Link to="/history">History</Link>
+                            <span className="welcome-message"> | Xin chào, {user.name} | </span>
+                            <Link to="/history">Lịch sử làm bài</Link>
                             <span> | </span>
-                            <button onClick={handleLogout}>Logout</button>
+                            <button onClick={handleLogout}>Đăng xuất</button>
                         </>
                     ) : (
                         <>
                             <span> | </span>
-                            <Link to="/login">Login</Link>
+                            <Link to="/login">Đăng nhập</Link>
                             <span> | </span>
-                            <Link to="/register">Register</Link>
+                            <Link to="/register">Đăng ký</Link>
                         </>
                     )}
                 </nav>
